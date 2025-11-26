@@ -792,7 +792,7 @@ class Avanza:
             stop_loss_id: The id of the stop loss order to delete.
 
             account_id: A valid account id.
-
+Since your branch is two commits behind, you’ll now see differences.
         Returns:
             Nothing
         """
