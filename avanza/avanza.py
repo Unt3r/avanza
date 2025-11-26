@@ -708,6 +708,37 @@ class Avanza:
             },
         )
 
+    def get_order(self, account_id: str, order_id: str):
+        """Get an existing order
+
+        Returns:
+
+            {
+                "orderId": str,
+                "orderbookId": str,
+                "side": str,
+                "state": str,
+                "marketReference": str,
+                "price": float,
+                "message": str,
+                "volume": int,
+                "originalVolume": int,
+                "accountId": str,
+                "condition": str,
+                "validUntil": str,
+                "modifiable": bool,
+                "deletable": bool,
+            }
+        """
+
+        return self.__call(
+            HttpMethod.GET,
+            Route.ORDER_GET_PATH.value.format(
+                order_id,
+                account_id,
+            ),
+        )
+
     def get_all_stop_losses(self):
         """Get open stop losses
 
@@ -761,7 +792,7 @@ class Avanza:
             stop_loss_id: The id of the stop loss order to delete.
 
             account_id: A valid account id.
-
+Since your branch is two commits behind, you’ll now see differences.
         Returns:
             Nothing
         """
